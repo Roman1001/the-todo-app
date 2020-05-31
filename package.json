@@ -22,8 +22,7 @@
     "generate": "npm-run-all generate-*",
     "generate-css": "npx sass src/scss/styles.scss assets/styles.css",
     "postinstall": "npx electron-builder install-app-deps",
-		"build": "npm run generate && npx electron-builder --mac --windows --linux",
-		"release": "npm run generate && npx electron-builder --mac --windows --linux --publish always"
+		"build": "npm run generate"
   },
   "author": "Romein van Buren",
   "license": "ISC",
