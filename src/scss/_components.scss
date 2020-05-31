@@ -1,0 +1,52 @@
+.controls {
+  background-color: darken($primary, 10);
+  -webkit-app-region: drag;
+  height: 25px;
+  width: 100%;
+  display: block;
+}
+
+nav {
+  @extend .navbar;
+  @extend .navbar-light;
+  @extend .bg-warning;
+  @extend .text-center;
+  @extend .mb-3;
+  @extend .sticky-top;
+
+  -webkit-app-region: drag;
+
+  & span {
+    @extend .navbar-brand;
+    @extend .mb-0;
+    @extend .h1;
+  }
+}
+
+h1, .h1 {
+  @extend .text-center;
+}
+
+#todoList {
+  @extend .list-group;
+
+  & li {
+    @extend .list-group-item;
+    @extend .list-group-item-action;
+
+    &:hover {
+      @extend .list-group-item-danger;
+      cursor: pointer;
+    }
+  }
+}
+
+*:not(input), *:not(textarea) {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <title>Add Todo</title>
+  </head>
+  <body>
+    <span class="controls"></span>
+    <nav><span>The Todo App</span></nav>
+    <h1>Add a Todo Item</h1>
+
+    <main class="container">
+      <form id="todoForm">
+        <div class="form-group">
+          <label class="form-label" for="add-input">What needs to be done?</label>
+          <input class="form-control" type="text" id="add-input" name="add-input" placeholder="I have to...">
+        </div>
+        <button class="btn btn-primary">Add Todo</button>
+      </form>
+    </main>
+
+    <script src="./add.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      document.getElementById("add-input").focus()
+    </script>
+  </body>
+</html>
