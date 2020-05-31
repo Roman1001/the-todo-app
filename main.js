@@ -3,6 +3,7 @@
 const path = require('path')
 const { app, ipcMain } = require('electron')
 const { BrowserWindow } = require('electron')
+const autoUpdater = require("electron-updater")
 
 const Window = require('./src/class/Window')
 const DataStore = require('./src/class/DataStore')
@@ -62,6 +63,10 @@ function main () {
 }
 
 app.on('ready', main)
+
+app.on("ready", () => {
+	autoUpdater.checkForUpdatesAndNotify()
+})
 
 app.on('window-all-closed', function () {
   app.quit()

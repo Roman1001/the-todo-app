@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "electron": "^9.0.0",
+    "electron-builder": "^22.7.0",
     "electron-packager": "^12.2.0"
   },
   "scripts": {
@@ -19,8 +20,25 @@
     "electron": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "npm-run-all generate-*",
-    "generate-css": "npx sass src/scss/styles.scss assets/styles.css"
+    "generate-css": "npx sass src/scss/styles.scss assets/styles.css",
+    "postinstall": "npx electron-builder install-app-deps",
+		"build": "npm run generate && npx electron-builder --mac --windows --linux",
+		"release": "npm run generate && npx electron-builder --mac --windows --linux --publish always"
   },
   "author": "Romein van Buren",
-  "license": "ISC"
+  "license": "ISC",
+  "build": {
+		"appId": "nl.romeinvanburen.theTodoApp",
+		"productName": "The Todo App",
+		"mac": {
+			"category": "public.app-category.productivity"
+		},
+		"dmg": {
+			"icon": false
+		},
+		"linux": {
+			"target": ["AppImage"],
+			"category": "Office"
+		}
+	}
 }
