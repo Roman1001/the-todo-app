@@ -26,11 +26,15 @@
   },
   "author": "Romein van Buren",
   "license": "ISC",
+	"repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/Roman1001/the-todo-app.git"
+  },
   "build": {
-		"appId": "nl.romeinvanburen.theTodoApp",
-		"productName": "The Todo App",
-		"mac": {
-			"category": "public.app-category.productivity"
+    "appId": "nl.romeinvanburen.theTodoApp",
+    "productName": "The Todo App",
+    "mac": {
+      "category": "public.app-category.productivity"
 		},
 		"dmg": {
 			"icon": false
@@ -39,5 +43,8 @@
 			"target": ["AppImage"],
 			"category": "Office"
 		}
-	}
+	},
+	"publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  }
 }
